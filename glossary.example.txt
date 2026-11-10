@@ -1,0 +1,13 @@
+# Từ điển tên riêng / thuật ngữ (tùy chọn) — dùng với:  --glossary glossary.txt
+#
+# Mỗi dòng:   Cách viết chuẩn = biến thể ASR hay nghe nhầm 1, biến thể 2, ...
+# Vế sau dấu "=" là tùy chọn. Dòng bắt đầu bằng # là chú thích.
+# Từ điển này được ưu tiên tuyệt đối so với từ điển LLM tự lập, đồng thời được dùng để "mồi" cho Whisper.
+
+partner = pát nơ, pác nơ, bát nơ
+onboard = ôn bốt, on boa
+KPI = kê pi ai, cây pi ai
+feedback = phi bách, phít bách
+affiliate = a phi li ết, ép phi li ết
+Event Activation
+BD = bi đi

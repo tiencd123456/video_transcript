@@ -1,0 +1,35 @@
+[project]
+name = "vtranscript"
+dynamic = ["version"]
+description = "Lấy transcript từ video, chuẩn hóa kỹ (chính tả, tên riêng, thuật ngữ) bằng LLM, tóm tắt và in phụ đề vào video."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "imageio-ffmpeg>=0.5",
+    "numpy",
+]
+
+[project.optional-dependencies]
+# ASR chạy trên máy (faster-whisper). Không cần khi gọi ASR qua API (mặc định khi có OPENROUTER_API_KEY).
+local = ["faster-whisper>=1.1"]
+# ASR trên máy, chạy bằng GPU NVIDIA.
+gpu = ["faster-whisper>=1.1", "nvidia-cublas-cu12", "nvidia-cudnn-cu12==9.*"]
+# Chỉ cần khi dùng --llm-backend anthropic.
+anthropic = ["anthropic>=0.70"]
+
+[project.scripts]
+vtranscript = "vtranscript.cli:main"
+vtranscript-bench = "vtranscript.bench:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "vtranscript/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vtranscript"]
+
+[tool.hatch.build.targets.sdist]
+include = ["vtranscript", "README.md", ".env.example", "glossary.example.txt"]

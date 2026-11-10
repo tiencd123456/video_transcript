@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+output/
+*.mp4
+*.mkv
+*.mov
+*.wav
+.env
+dist/
+build/
+*.egg-info/
